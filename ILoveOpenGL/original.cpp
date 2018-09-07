@@ -14,13 +14,13 @@ cShaderManager* pShaderManager;
 
 static const struct
 {
-	float x, y;
+	float x, y, z;
 	float r, g, b;
 } vertices[3] =
 {
-	{ -0.6f, -0.4f, 1.f, 0.f, 0.f },
-	{  0.6f, -0.4f, 0.f, 1.f, 0.f },
-	{   0.f,  0.6f, 0.f, 0.f, 1.f }
+	{ -0.6f, -0.4f, 0.0f, 1.f, 0.f, 0.f },
+	{  0.6f, -0.4f, 0.0f, 0.f, 1.f, 0.f },
+	{   0.f,  0.6f, 0.0f, 0.f, 0.f, 1.f }
 };
 //static const char* vertex_shader_text =
 //"uniform mat4 MVP;\n"
@@ -114,11 +114,19 @@ int main(void)
 	vpos_location = glGetAttribLocation(program, "vPos");
 	vcol_location = glGetAttribLocation(program, "vCol");
 	glEnableVertexAttribArray(vpos_location);
-	glVertexAttribPointer(vpos_location, 2, GL_FLOAT, GL_FALSE,
-		sizeof(float) * 5, (void*)0);
+	glVertexAttribPointer(vpos_location, 3, 
+		GL_FLOAT, 
+		GL_FALSE, //Don't Normalize
+		sizeof(float) * 6, //How far is the next array of value from the first value
+		(void*)0); // Start of the values
+	
 	glEnableVertexAttribArray(vcol_location);
-	glVertexAttribPointer(vcol_location, 3, GL_FLOAT, GL_FALSE,
-		sizeof(float) * 5, (void*)(sizeof(float) * 2));
+	glVertexAttribPointer(vcol_location, 
+		3, 
+		GL_FLOAT, 
+		GL_FALSE,
+		sizeof(float) * 6, 
+		(void*)(sizeof(float) * 3));
 
 
 
