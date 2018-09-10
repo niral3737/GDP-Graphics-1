@@ -155,12 +155,18 @@
     <ClCompile Include="cShaderManager.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="original.cpp" />
+    <ClCompile Include="PlyFileLoader.cpp" />
     <ClCompile Include="theMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cShaderManager.h" />
     <ClInclude Include="globalStuff.h" />
     <ClInclude Include="linmath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bun_res2_xyz.ply" />
+    <None Include="fragment01.glsl" />
+    <None Include="vertex01.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

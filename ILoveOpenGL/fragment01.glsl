@@ -1,3 +1,5 @@
+
+//in from a previous stage(vertex shader)
 varying vec3 color;
 void main()
 {

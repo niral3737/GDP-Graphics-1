@@ -30,6 +30,9 @@
     <ClCompile Include="cShaderManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PlyFileLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cShaderManager.h">
@@ -41,5 +44,10 @@
     <ClInclude Include="globalStuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fragment01.glsl" />
+    <None Include="vertex01.glsl" />
+    <None Include="bun_res2_xyz.ply" />
   </ItemGroup>
 </Project>

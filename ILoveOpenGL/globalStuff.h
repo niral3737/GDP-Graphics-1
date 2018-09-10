@@ -4,4 +4,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include <string>
+
+//Signature for the plyLoader
+bool LoadPlyFile(std::string fileName);
+
 #endif

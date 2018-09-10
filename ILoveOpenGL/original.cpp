@@ -17,7 +17,7 @@ static const struct
 	float x, y, z;
 	float r, g, b;
 } vertices[3] =
-{
+{ //    x      y     z     r    g    b
 	{ -0.6f, -0.4f, 0.0f, 1.f, 0.f, 0.f },
 	{  0.6f, -0.4f, 0.0f, 0.f, 1.f, 0.f },
 	{   0.f,  0.6f, 0.0f, 0.f, 0.f, 1.f }
@@ -50,8 +50,7 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
 int main(void)
 {
 	GLFWwindow* window;
-	GLuint vertex_buffer, vertex_shader, fragment_shader/*, program*/;
-	GLint mvp_location, vpos_location, vcol_location;
+
 	glfwSetErrorCallback(error_callback);
 	if (!glfwInit())
 		exit(EXIT_FAILURE);
@@ -88,6 +87,15 @@ int main(void)
 	{
 		std::cout << "Compile error" << std::endl;
 		std::cout << pShaderManager->getLastError() << std::endl;
+	}
+
+	GLuint vertex_buffer, vertex_shader, fragment_shader/*, program*/;
+	GLint mvp_location, vpos_location, vcol_location;
+
+	if (!LoadPlyFile("bun_res2_xyz.ply"))
+	{
+		std::cout << "Can't open the file. Exiting." << std::endl;
+		return -1;
 	}
 
 
